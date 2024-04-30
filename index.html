@@ -3,11 +3,31 @@
 <head>  
 <meta charset="UTF-8">  
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-<title>文字跳动示例</title>  
+<title>文字依次跳动示例</title>  
 <style>  
+  body {  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    height: 100vh;  
+    margin: 0;  
+    font-family: Arial, sans-serif;  
+  }  
+  
   .jumping-text {  
-    font-size: 2em;  
-    animation: jump 1s infinite;  
+    display: flex;  
+    font-size: 4em;  
+    line-height: 1em;  
+    animation-duration: 1s;  
+    animation-iteration-count: infinite;  
+  }  
+  
+  .jumping-text span {  
+    margin-right: 0.2em; /* 可选，用于调整文字间距 */  
+    animation-name: jump;  
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);  
+    -webkit-background-clip: text;  
+    -webkit-text-fill-color: transparent;  
   }  
   
   @keyframes jump {  
@@ -18,16 +38,36 @@
       transform: translateY(-20px);  
     }  
   }  
+  
+  /* 依次跳动的动画延迟 */  
+  .jumping-text span:nth-child(1) { animation-delay: 0s; }  
+  .jumping-text span:nth-child(2) { animation-delay: 0.1s; }  
+  .jumping-text span:nth-child(3) { animation-delay: 0.2s; }  
+  .jumping-text span:nth-child(4) { animation-delay: 0.3s; }  
+  .jumping-text span:nth-child(5) { animation-delay: 0.4s; }  
+  /* 根据需要继续添加更多子元素的延迟 */  
+  
+  /* 对于更长的文本，你可能需要使用JavaScript来动态添加延迟 */  
 </style>  
 </head>  
 <body>  
   
-<div class="jumping-text">hello world!</div>  
+<div class="jumping-text">  
+  <span>h</span>  
+  <span>e</span>  
+  <span>l</span>  
+  <span>l</span>  
+  <span>o</span>  
+  <span> </span>  
+  <span>w</span>  
+  <span>o</span>  
+  <span>r</span>  
+  <span>l</span>  
+  <span>d</span>  
+  <!-- 对于更长的文本，你可能需要动态添加这些span元素 -->  
+</div>  
   
-<script>  
-  // 这里不需要JavaScript代码，因为CSS动画已经足够实现效果  
-  // 但如果你想要更复杂的动态行为，你可以在这里添加JavaScript代码  
-</script>  
+<!-- 如果你需要动态处理更长的文本，可以在这里添加JavaScript代码 -->  
   
 </body>  
 </html>
