@@ -15,19 +15,13 @@
   }  
   
   .jumping-text {  
-    display: flex;  
+    display: inline-flex; /* 使用inline-flex以保持文本在一行内 */  
     font-size: 4em;  
-    line-height: 1em;  
-    animation-duration: 1s;  
-    animation-iteration-count: infinite;  
+    line-height: 1; /* 确保文字垂直居中 */  
   }  
   
   .jumping-text span {  
-    margin-right: 0.2em; /* 可选，用于调整文字间距 */  
-    animation-name: jump;  
-    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);  
-    -webkit-background-clip: text;  
-    -webkit-text-fill-color: transparent;  
+    animation: jump 1s infinite;  
   }  
   
   @keyframes jump {  
@@ -39,15 +33,33 @@
     }  
   }  
   
-  /* 依次跳动的动画延迟 */  
+  /* 为每个文字设置不同的动画延迟 */  
   .jumping-text span:nth-child(1) { animation-delay: 0s; }  
   .jumping-text span:nth-child(2) { animation-delay: 0.1s; }  
   .jumping-text span:nth-child(3) { animation-delay: 0.2s; }  
   .jumping-text span:nth-child(4) { animation-delay: 0.3s; }  
   .jumping-text span:nth-child(5) { animation-delay: 0.4s; }  
-  /* 根据需要继续添加更多子元素的延迟 */  
+
+    .jumping-text span:nth-child(6) { animation-delay: 0.5s; }  
+  .jumping-text span:nth-child(7) { animation-delay: 0.6s; }  
+  .jumping-text span:nth-child(8) { animation-delay: 0.7s; }  
+  .jumping-text span:nth-child(9) { animation-delay: 0.8s; }  
+
+  /* 你可以继续为更多的文字添加延迟 */  
   
-  /* 对于更长的文本，你可能需要使用JavaScript来动态添加延迟 */  
+  /* 如果需要，可以给文字添加颜色 */  
+  .jumping-text span:nth-child(1) { color: red; }  
+  .jumping-text span:nth-child(2) { color: orange; }  
+  .jumping-text span:nth-child(3) { color: skyblue; }  
+  .jumping-text span:nth-child(4) { color: green; }  
+  .jumping-text span:nth-child(5) { color: blue; }  
+
+  .jumping-text span:nth-child(6) { color: red; }  
+  .jumping-text span:nth-child(7) { color: orange; }  
+  .jumping-text span:nth-child(8) { color: skyblue; }  
+  .jumping-text span:nth-child(9) { color: green; }  
+
+  /* 同样，你可以继续为更多的文字添加颜色 */  
 </style>  
 </head>  
 <body>  
@@ -58,16 +70,14 @@
   <span>l</span>  
   <span>l</span>  
   <span>o</span>  
-  <span> </span>  
-  <span>w</span>  
+
+  <span style="margin-left: 20px;">w</span>  
   <span>o</span>  
   <span>r</span>  
   <span>l</span>  
   <span>d</span>  
-  <!-- 对于更长的文本，你可能需要动态添加这些span元素 -->  
+  <!-- 为每个文字添加一个span元素 -->  
 </div>  
-  
-<!-- 如果你需要动态处理更长的文本，可以在这里添加JavaScript代码 -->  
   
 </body>  
 </html>
