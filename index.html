@@ -1,1 +1,33 @@
-Hello World!!!
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>文字跳动示例</title>  
+<style>  
+  .jumping-text {  
+    font-size: 2em;  
+    animation: jump 1s infinite;  
+  }  
+  
+  @keyframes jump {  
+    0%, 100% {  
+      transform: translateY(0);  
+    }  
+    50% {  
+      transform: translateY(-20px);  
+    }  
+  }  
+</style>  
+</head>  
+<body>  
+  
+<div class="jumping-text">hello world!</div>  
+  
+<script>  
+  // 这里不需要JavaScript代码，因为CSS动画已经足够实现效果  
+  // 但如果你想要更复杂的动态行为，你可以在这里添加JavaScript代码  
+</script>  
+  
+</body>  
+</html>
